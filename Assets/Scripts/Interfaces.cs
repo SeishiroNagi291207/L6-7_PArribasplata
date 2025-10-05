@@ -14,3 +14,13 @@ public interface IDropItem
 {
     void DropItem();
 }
+
+public interface IConsumable
+{
+    void Consume(GameObject target);
+}
+
+public interface IApplyBuff
+{
+    void ApplyBuff(GameObject target);
+}
