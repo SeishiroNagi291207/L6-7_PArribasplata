@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class HealthPotion : MonoBehaviour
+public class HealthPotion : Item
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public int healAmount = 25;
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact(GameObject target)
     {
-        
+        Player player = target.GetComponent<Player>();
+        if (player != null)
+        {
+            player.playerHp += healAmount;
+            Debug.Log("Jugador curado +" + healAmount);
+            Destroy(gameObject);
+        }
     }
 }

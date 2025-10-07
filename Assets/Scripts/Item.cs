@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : Entity, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public string itemName;
 
-    // Update is called once per frame
-    void Update()
+    public abstract void Interact(GameObject target);
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.CompareTag("Player"))
+        {
+            Interact(collision.gameObject);
+        }
     }
 }

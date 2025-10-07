@@ -10,17 +10,7 @@ public interface IAttack
     void Attack();
 }
 
-public interface IDropItem
+public interface IInteractable
 {
-    void DropItem();
-}
-
-public interface IConsumable
-{
-    void Consume(GameObject target);
-}
-
-public interface IApplyBuff
-{
-    void ApplyBuff(GameObject target);
+    void Interact(GameObject target);
 }

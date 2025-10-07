@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class SpeddBuff : MonoBehaviour
+public class SpeedBuff : Item
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float buffAmount = 2f;
+    public float duration = 3f;
 
-    // Update is called once per frame
-    void Update()
+    public override void Interact(GameObject target)
     {
-        
+        Player player = target.GetComponent<Player>();
+        if (player != null)
+        {
+            player.moveSpeed += buffAmount;
+            Debug.Log("Velocidad aumentada por " + duration + "s");
+            Destroy(gameObject);
+            player.Invoke(nameof(player.ResetSpeed), duration);
+        }
     }
 }
