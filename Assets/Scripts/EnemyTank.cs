@@ -5,9 +5,9 @@ public class EnemyTank : Enemy
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        moveSpeed = 2f;
-        damage = 20;
-        attackCooldown = 2f;
+        MoveSpeed = 2f;
+        Damage = 20;
+        AttackCooldown = 2f;
         entityName = "Enemigo Tanque";
     }
 }

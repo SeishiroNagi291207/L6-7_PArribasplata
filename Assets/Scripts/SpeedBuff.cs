@@ -10,7 +10,7 @@ public class SpeedBuff : Item
         Player player = target.GetComponent<Player>();
         if (player != null)
         {
-            player.moveSpeed += buffAmount;
+            player.MoveSpeed += buffAmount;
             Debug.Log("Jugador más rápido por " + duration + " segundos.");
             player.Invoke(nameof(player.ResetSpeed), duration);
             Destroy(gameObject);

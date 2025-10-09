@@ -9,7 +9,7 @@ public class HealthPotion : Item
         Player player = target.GetComponent<Player>();
         if (player != null)
         {
-            player.playerHp += healAmount;
+            player.PlayerHp += healAmount;
             Debug.Log("Jugador curado +" + healAmount);
             Destroy(gameObject);
         }
