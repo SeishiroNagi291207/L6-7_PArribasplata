@@ -98,14 +98,14 @@ public class Player : Entity, IDamageable
         Debug.Log("Jugador ataca!");
         nextAttackTime = Time.time + AttackCooldown; //Time.time es una implementación simple que cuenta los segundos desde que empezó el juego.
 
-        /*Una Manera de Implementarlo aparte de esta nueva seria:
+        /*Una Manera de Implementarlo aparte de esta nueva implementación seria:
         attackTimer += Time.deltaTime;
         if (attackTimer >= attackCooldown)
         {
         Attack();
         attackTimer = 0f;
         }
-        Y simplemente agregas arriba la variable:
+        Y simplemente agregar arriba la variable:
         private float attackTimer = 0f;
         */
     }

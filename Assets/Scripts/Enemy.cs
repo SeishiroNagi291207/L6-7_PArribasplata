@@ -69,7 +69,19 @@ public class Enemy : Entity, IDamageable
         {
             Layla.TakeDamage(Damage, transform.position);
         }
-        nextAttackTime = Time.time + AttackCooldown;
+        nextAttackTime = Time.time + AttackCooldown; //Time.time es una implementación simple que cuenta los segundos desde que empezó el juego.
+
+        /*Una Manera de Implementarlo aparte de esta nueva implementación seria:
+        attackTimer += Time.deltaTime;
+        if (attackTimer >= attackCooldown)
+        {
+        Attack();
+        attackTimer = 0f;
+        }
+
+        Y simplemente agregar arriba la variable:
+        private float attackTimer = 0f;
+        */
     }
     public void TakeDamage(int damage, Vector3 origin)
     {
