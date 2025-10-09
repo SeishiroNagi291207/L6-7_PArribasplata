@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 1739693391}
   m_Layer: 0
   m_Name: EnemyFast
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -776,11 +776,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFast
   entityName: Badang
   id: 0
-  moveSpeed: 4
+  enemyHP: 30
   damage: 10
   detectionRange: 4
-  attackRange: 0.8
+  attackRange: 1.5
   attackCooldown: 1.2
+  moveSpeed: 4
 --- !u!58 &1739693392
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -909,7 +910,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1884711577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1000,6 +1001,8 @@ MonoBehaviour:
   moveSpeed: 5
   playerHp: 100
   attackCooldown: 0.5
+  attackDamage: 20
+  attackRange: 1.2
 --- !u!1 &2069253511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,10 +1015,10 @@ GameObject:
   - component: {fileID: 2069253513}
   - component: {fileID: 2069253515}
   - component: {fileID: 2069253517}
-  - component: {fileID: 2069253516}
+  - component: {fileID: 2069253518}
   m_Layer: 0
   m_Name: EnemyTank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1120,25 +1123,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2069253516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069253511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e146bf874149643bbffb5277c5c786, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyTank
-  entityName: Laura
-  id: 0
-  moveSpeed: 3
-  damage: 10
-  detectionRange: 6
-  attackRange: 1.5
-  attackCooldown: 1.2
 --- !u!58 &2069253517
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1175,6 +1159,26 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!114 &2069253518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069253511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e146bf874149643bbffb5277c5c786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyTank
+  entityName: 
+  id: -4
+  enemyHP: 30
+  damage: 10
+  detectionRange: 6
+  attackRange: 2.5
+  attackCooldown: 1.2
+  moveSpeed: 3
 --- !u!1 &2093687339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1331,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2104457027}
   - component: {fileID: 2104457026}
-  - component: {fileID: 2104457028}
   m_Layer: 0
   m_Name: Fondo
   m_TagString: Untagged
@@ -1408,52 +1411,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &2104457028
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2104457025}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.97, y: 8.38}
-    newSize: {x: 14.97, y: 8.38}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 14.97, y: 8.38}
-  m_EdgeRadius: 0
 --- !u!1 &2111383331
 GameObject:
   m_ObjectHideFlags: 0
