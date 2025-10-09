@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public abstract class Item : Entity, IInteractable
+public abstract class Item : MonoBehaviour, IConsumable
 {
     public string itemName;
 
-    public abstract void Interact(GameObject target);
+    public abstract void Consume(GameObject target);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            Interact(collision.gameObject);
+            Consume(collision.gameObject);
         }
     }
 }

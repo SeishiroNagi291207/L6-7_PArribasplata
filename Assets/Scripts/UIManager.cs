@@ -1,16 +1,14 @@
 using UnityEngine;
+using TMPro;
 
-public class UiManager : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI hpText;
+    public Player player;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (player != null && hpText != null)
+            hpText.text = "Vida: " + player.playerHp.ToString("F0");
     }
 }

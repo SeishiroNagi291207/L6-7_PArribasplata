@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class SpeedBuff : Item
 {
-    public float buffAmount = 2f;
-    public float duration = 3f;
+    public float buffAmount = 3f;
+    public float duration = 5f;
 
-    public override void Interact(GameObject target)
+    public override void Consume(GameObject target)
     {
         Player player = target.GetComponent<Player>();
         if (player != null)
         {
             player.moveSpeed += buffAmount;
-            Debug.Log("Velocidad aumentada por " + duration + "s");
-            Destroy(gameObject);
+            Debug.Log("Jugador más rápido por " + duration + " segundos.");
             player.Invoke(nameof(player.ResetSpeed), duration);
+            Destroy(gameObject);
         }
     }
 }

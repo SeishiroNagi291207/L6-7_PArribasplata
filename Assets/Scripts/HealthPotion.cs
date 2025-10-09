@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class HealthPotion : Item
 {
-    public int healAmount = 25;
+    public float healAmount = 25f;
 
-    public override void Interact(GameObject target)
+    public override void Consume(GameObject target)
     {
         Player player = target.GetComponent<Player>();
         if (player != null)

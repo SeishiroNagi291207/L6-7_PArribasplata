@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public abstract class Entity : MonoBehaviour
+public class Entity : MonoBehaviour
 {
-    public int ID;
-    public string EntityName;
+    public string entityName;
+    public int id;
 }

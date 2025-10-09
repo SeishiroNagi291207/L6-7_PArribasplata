@@ -10,7 +10,7 @@ public interface IAttack
     void Attack();
 }
 
-public interface IInteractable
+public interface IConsumable
 {
-    void Interact(GameObject target);
+    void Consume(GameObject target);
 }
